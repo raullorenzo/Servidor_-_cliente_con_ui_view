@@ -1,0 +1,62 @@
+
+<!-- Created by Raul Lorenzo on 24/03/2016. -->
+ 
+
+<div class="jumbotron text-center">
+            <h1>Total Registros: <span class="label label-warning">{{ usuarios.length }}</span></h1>
+        </div>
+<!-- <h2>Buscar Usuarios</h2>
+<div class="row form-group" style="position: relative; display: inline-block; margin-left: 10px; width: 350px">
+    Filtrar por Nombre: <input type="text" class="form-control" placeholder="Búsqueda por Nombre..." ng-model="studentName" />
+</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="row form-group" style="position: relative; display: inline-block; margin-left: 10px; width: 350px">
+    Filtrar por Nombre, Apellido o E-mail: <input type="text" class="form-control" placeholder="Búsqueda por nombre, apellido y E-mail..." ng-model="searchText" />
+</div> -->
+<h2 class="sub-header">Listado de Usuarios</h2>
+<button type="submit" class="btn btn-success" style="width: 150px" ui-sref="agregar">Añadir Usuario</button><br>
+<br><br>
+
+<div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <th style="width: 5%;">ID</th>
+            <th ng-click="sort('nombre')" style="cursor: pointer;">NOMBRE&nbsp;&nbsp;&nbsp;
+                <span class="glyphicon sort-icon" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+            </th>
+            <th ng-click="sort('apellido')" style="cursor: pointer;">APELLIDO&nbsp;&nbsp;&nbsp;
+                <span class="glyphicon sort-icon" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+            </th>
+            <th ng-click="sort('mail')" style="cursor: pointer;">E-MAIL&nbsp;&nbsp;&nbsp;
+                <span class="glyphicon sort-icon" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+            </th>
+            <th ng-click="sort('nivel')" style="cursor: pointer;">NIVEL&nbsp;&nbsp;&nbsp;
+                <span class="glyphicon sort-icon" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+            </th>
+            <th style="width: 5%"><div><span style="display: inline; font-size: 25px" class="glyphicon glyphicon-circle-arrow-up"></span>&nbsp;&nbsp;<span style="display: inline; font-size: 25px" class="glyphicon glyphicon-circle-arrow-down"></span></div></th>
+            <th style="width: 5%">EDITAR</th>
+            <th style="width: 5%">ELIMINAR</th>
+            <th style="width: 5%">PERFIL</th>
+            <tr dir-paginate="usuario in usuarios | orderBy:sortKey:reverse | filter:{ nombre: studentName } | filter:searchText | itemsPerPage:9">
+                <td style="color: red">{{ $index + 1 }}</td>
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.apellido }}</td>
+                <td>{{ usuario.mail }}</td>
+                <td>{{ niveles[usuario.nivel] }}</td>
+                <td><span style="color: green; font-size: 25px" class="glyphicon glyphicon-circle-arrow-up" ng-hide="usuario.nivel==2" ng-click="masNivel(usuario)" style="margin-top: 12px"></span>
+                <span style="color: red; font-size: 25px" class="glyphicon glyphicon-circle-arrow-down" ng-hide="usuario.nivel==0" ng-click="menosNivel(usuario)" style="margin-top: 12px"></span></td>
+                <td><button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-edit" ng-click="procesaObjeto(usuario)" aria-hidden="true"></span></button></td>
+                <td><button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash" ng-click="eliminar(usuario)" aria-hidden="true"></span></button></td>
+                <td><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-user" ng-click="procesaObjeto(usuario)" aria-hidden="true"></span></button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<button type="submit" class="btn btn-success" style="width: 150px" ui-sref="agregar">Añadir Usuario</button><br>
+<!-- PAGINACION -->
+<dir-pagination-controls
+    max-size="5"
+    direction-links="true"
+    boundary-links="true" >
+</dir-pagination-controls>
+<!-- FIN PAGINACION -->
+

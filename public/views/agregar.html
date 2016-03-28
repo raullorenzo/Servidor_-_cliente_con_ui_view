@@ -1,0 +1,49 @@
+
+<!-- Created by Raul Lorenzo on 24/03/2016. -->
+ 
+<form>
+    <h3>Nuevo usuario:</h3>
+    <div style="width: 600px">
+        <div class="has-feedback">
+            <input type="text" class="form-control" placeholder="Nombre" ng-model="usuario.nombre"> </input>
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div>
+        <div class="has-feedback">
+            <input type="text" class="form-control" placeholder="Apellido" ng-model="usuario.apellido"> </input>
+            <span class="glyphicon glyphicon-tasks form-control-feedback"></span>
+        </div>
+        <div class="has-feedback">
+            <input type="text" class="form-control" placeholder="E-Mail" ng-model="usuario.mail"> </input>
+            <span class="glyphicon glyphicon-edit form-control-feedback"></span>
+        </div>
+    </div>
+
+    <div>
+        <span class="glyphicon glyphicon-time"></span>&nbsp;<span class="lead prioridad">Elige el nivel del usuario:</span>
+        <label class="radio-inline">
+            <input type="radio" ng-model="usuario.nivel" value="0"> Bajo
+        </label>
+        <label class="radio-inline">
+            <input type="radio" ng-model="usuario.nivel" value="1"> Medio
+        </label>
+        <label class="radio-inline">
+            <input type="radio" ng-model="usuario.nivel" value="2"> Alto
+        </label>
+    </div>
+    <button type="submit" class="btn btn-success" style="width: 150px; margin-right: 295px" ng-click="agregar()">Agregar</button>
+    <button type="submit" class="btn btn-warning" style="width: 150px" ui-sref="alta" >Volver</button>
+</form>
+<div id="vistaPrevia" class="panel panel-info" style="width: 600px">
+    <div class="panel-heading">Vista previa</div>
+    <div class="panel-body">
+        <p>
+            <strong>Nombre: </strong>{{ usuario.nombre }}<br/><hr>
+            <strong>Apellido: </strong>{{ usuario.apellido }}<br/><hr>
+            <strong>E-mail: </strong>{{ usuario.mail }}<br/><hr>
+            <strong>Nivel: </strong>{{ niveles[usuario.nivel] }}&nbsp;-&nbsp;{{ usuario.nivel }}<br/><hr>
+        </p>
+    </div>
+<!-- <div>
+    <a ui-sref="alta">Regresar</a>
+</div> -->
+

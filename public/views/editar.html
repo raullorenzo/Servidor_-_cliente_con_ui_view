@@ -1,0 +1,42 @@
+
+<!-- Created by Raul Lorenzo on 24/03/2016. -->
+
+
+<div style="width: 400px">
+<h2>Perfil Usuario</h2>
+    <form>
+        <h3><strong style="color: brown">Usuario:</strong>&nbsp;{{usuario.nombre}}&nbsp;{{usuario.apellido}}</h3>
+        <div class="has-feedback">
+            <input type="text" class="form-control" placeholder="Nombre" ng-model="usuario.nombre" value="{{usuario.nombre}}"> </input>
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div>
+        <div class="has-feedback">
+            <input type="text" class="form-control" placeholder="Apellido" ng-model="usuario.apellido" value="{{usuario.apellido}}"> </input>
+            <span class="glyphicon glyphicon-tasks form-control-feedback"></span>
+        </div>
+        <div class="has-feedback">
+            <input type="text" class="form-control" placeholder="E-Mail" ng-model="usuario.mail" value="{{usuario.mail}}"> </input>
+            <span class="glyphicon glyphicon-edit form-control-feedback"></span>
+        </div>
+        <div>
+            <span class="glyphicon glyphicon-time"></span>&nbsp;<span class="lead prioridad">Selecciona Nivel:</span>
+            <label class="radio-inline">
+                <input type="radio" ng-model="usuario.nivel" value="0"> Bajo
+            </label>
+            <label class="radio-inline">
+                <input type="radio" ng-model="usuario.nivel" value="1"> Medio
+            </label>
+            <label class="radio-inline">
+                <input type="radio" ng-model="usuario.nivel" value="2"> Alto
+            </label>
+        </div>
+        <div class="text-center editBtn">
+            <button class="btn btn-success" ng-click="actualizar()">Actualizar</button>
+            <button class="btn btn-danger" ng-click="eliminar()">Eliminar</button>
+            <button class="btn btn-warning" ui-sref="alta">Volver</button>
+        </div>
+    </form>
+</div>
+<!-- <div>
+    <a ui-sref="alta">Regresar</a>
+</div> -->

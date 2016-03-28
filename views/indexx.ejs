@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Panel del Administrador</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="javascripts/appAngular.js"></script>
+    <script type="text/javascript" src="javascripts/dirPagination.js"></script>
+</head>
+
+<body ng-app="app">
+    <div class="page-header">
+        <h1 style="margin-left: 15px">Panel de Administrador</h1>
+        <button type="submit" class="btn btn-info" style="width: 150px; margin-left: 50px" ui-sref="alta">Usuarios</button>
+        <button type="submit" class="btn btn-info" style="width: 150px" ui-sref="mesas">Mesas</button>
+    </div>
+    <div style="margin: 50px">
+        <ui-view></ui-view>
+    </div>
+</body>
+
+</html>
